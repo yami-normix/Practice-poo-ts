@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const userManager_1 = require("./userManager");
+const user_class_1 = require("./user-class");
+const userManager = new userManager_1.UserManager();
+const user1 = new user_class_1.User(1, "Norma", "diaz@.com");
+const user2 = new user_class_1.User(2, "Luis", "luis@.com");
+userManager.addUser(user1);
+userManager.addUser(user2);
+const foundUser = userManager.getUserById(1);
+console.log(foundUser === null || foundUser === void 0 ? void 0 : foundUser.getName());
+const allUsers = userManager.getUsers();
+console.log(allUsers.forEach(user => console.log(user.getName())));
